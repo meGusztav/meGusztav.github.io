@@ -1,3 +1,6 @@
+import {createRoot} from 'react-dom/client';
+import React from 'react';
+
 window.onload = function() {
     document.body.classList.remove('is-preload');
 };
