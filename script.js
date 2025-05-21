@@ -5,10 +5,12 @@ import ReactDOM from 'react-dom/client';
 
 // 2. Create a simple React component
 function HelloReact() {
-    return <div style={{ padding: '1em', background: '#f0f0f0', borderRadius: '8px' }}>
-        <h2>Hello from React!</h2>
-        <p>This is a React component rendered inside your webpage.</p>
-    </div>;
+    return React.createElement(
+        'div',
+        { style: { padding: '1em', background: '#f0f0f0', borderRadius: '8px' } },
+        React.createElement('h2', null, 'Hello from React!'),
+        React.createElement('p', null, 'This is a React component rendered inside your webpage.')
+    );
 }
 
 // 3. Create a container for the React component if it doesn't exist
