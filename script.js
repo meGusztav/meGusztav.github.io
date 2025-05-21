@@ -23,7 +23,7 @@ if (!reactRoot) {
 
 // 4. Render the React component
 const root = ReactDOM.createRoot(reactRoot);
-root.render(<HelloReact />);
+root.render(React.createElement(HelloReact));
 
 /*
 Steps to implement:
