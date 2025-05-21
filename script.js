@@ -1,17 +1,37 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 
-function App() {
-    return (
-        <div>
-            <h1>Welcome to my web page!</h1>
-            <p>This is a React component rendered on the index.html.</p>
-        </div>
-    );
+// 1. Import React and ReactDOM
+
+// 2. Create a simple React component
+function HelloReact() {
+    return <div style={{ padding: '1em', background: '#f0f0f0', borderRadius: '8px' }}>
+        <h2>Hello from React!</h2>
+        <p>This is a React component rendered inside your webpage.</p>
+    </div>;
 }
 
-const root = createRoot(document.getElementById('root'));
-root.render(<App />);
+// 3. Create a container for the React component if it doesn't exist
+let reactRoot = document.getElementById('react-root');
+if (!reactRoot) {
+    reactRoot = document.createElement('div');
+    reactRoot.id = 'react-root';
+    document.body.prepend(reactRoot);
+}
+
+// 4. Render the React component
+const root = ReactDOM.createRoot(reactRoot);
+root.render(<HelloReact />);
+
+/*
+Steps to implement:
+1. Install React and ReactDOM via npm or include them via CDN in your HTML:
+   <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+2. Add a <div id="react-root"></div> to your HTML body, or let the script create it.
+3. Place this script in your HTML after the React/ReactDOM scripts (if using CDN).
+4. The React component will render at the top of your page.
+*/
 
 window.onload = function() {
     document.body.classList.remove('is-preload');
