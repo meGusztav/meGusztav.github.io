@@ -1,5 +1,5 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from './node_modules/react/index.js';
+   import ReactDOM from './node_modules/react-dom/client.js';
 
 // 1. Import React and ReactDOM
 
