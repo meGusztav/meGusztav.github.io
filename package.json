@@ -3,6 +3,7 @@
     "gulp": "^5.0.0",
     "gulp-less": "^5.0.0",
     "gulp-sass": "^6.0.1",
+    "node-gyp": "^11.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   }
