@@ -27,6 +27,13 @@
 			background-size: $width auto;
 			width: ($width * 3);
 		}
+
+		/* Mobile */
+		@include breakpoint('<=mobile') {
+		/* BG */
+		// Now you can pass 'cover' for background-size
+		@include bg(100vw, cover); // Use 100vw for element width, and 'cover' for image size
+		}
 	}
 
 	$delay-wrapper:			_duration(wrapper) - 1s;
