@@ -21,8 +21,8 @@
         <img alt="Prettier" src="https://img.shields.io/badge/-Prettier-F7B93E?style=flat-square&logo=prettier&logoColor=white" />
         <img alt="Nodejs" src="https://img.shields.io/badge/-Nodejs-43853d?style=flat-square&logo=Node.js&logoColor=white" />
       </p>
-  👀 I’m interested in web development in a full stack perspective, as well as gaming development.<br/>
-  👨🏽‍💻 I'm working on building an IT developmental application that provides IT support to both the end-user and IT specialists. <br/>
+  👀 I’m interested in web development in a full stack perspective, project management, as well as gaming development.<br/>
+  👨🏽‍💻 I'm working as a Marketplace Project Manager for a startup in preparation for launch. <br/>
   🌱 I’m currently reviewing JavaScript fundamentals in preparation for multiple interview processes and looking at web dev courses to continue learning new things.<br/>
   📫 Below is my contact info. I look forward to hearing from you all.<br/><br/>
   <ul>
