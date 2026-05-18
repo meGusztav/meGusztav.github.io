@@ -75,10 +75,8 @@ img { display: block; max-width: 100%; }
   inset: 0 0 auto 0;
   z-index: 900;
   padding: 18px 0;
-  background: rgba(240, 245, 249, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(13, 27, 46, 0.06);
+  background: var(--bg-light);
+  border-bottom: 1px solid rgba(13, 27, 46, 0.09);
   transition: background 0.35s ease, padding 0.35s ease, border-color 0.35s ease;
 }
 .navbar.scrolled {
@@ -200,10 +198,31 @@ img { display: block; max-width: 100%; }
    HERO
    ============================================================ */
 .hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy); /* fills right-side margin beyond hero-inner */
+}
+
+/* Extends the light panel to the viewport left edge when hero-inner is constrained */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  /* left margin + hero-left 48% share of 1200px inner */
+  width: calc((100% - 1200px) / 2 + 576px);
+  background: var(--bg-light);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
   min-height: 100vh;
   display: flex;
-  overflow: hidden;
-  background: var(--bg-light); /* fills the diagonal gap */
 }
 
 /* LEFT PANEL — light */
@@ -249,7 +268,9 @@ img { display: block; max-width: 100%; }
 
 /* Hero copy */
 .hero-copy {
-  max-width: 440px;
+  flex: 1;
+  min-width: 0;
+  max-width: 500px;
   margin-left: 32px; /* clear the social strip */
 }
 
@@ -341,7 +362,8 @@ img { display: block; max-width: 100%; }
   background: var(--navy);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: clamp(40px, 6%, 80px);
   position: relative;
   overflow: hidden;
   min-height: 100%;
@@ -373,24 +395,22 @@ img { display: block; max-width: 100%; }
   animation: slide-right 0.9s 0.35s var(--ease) both;
 }
 
-/* Avatar */
-.av-wrap { width: 140px; height: 140px; }
-.av-ring {
-  width: 140px; height: 140px;
-  border-radius: 50%;
-  padding: 4px;
-  background: conic-gradient(from 0deg, var(--teal), var(--purple), var(--pink), var(--amber), var(--teal));
-  display: flex; align-items: center; justify-content: center;
-}
-.av-circle {
-  width: 132px; height: 132px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1d4ed8 0%, #0d9488 100%);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: #fff;
+/* Avatar photo */
+.av-wrap { width: 260px; height: 300px; }
+.av-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 4px;
+  /* Fade all edges into the navy background */
+  -webkit-mask-image: radial-gradient(ellipse 78% 85% at 50% 42%,
+    black 35%, rgba(0,0,0,0.9) 52%, transparent 72%);
+  mask-image: radial-gradient(ellipse 78% 85% at 50% 42%,
+    black 35%, rgba(0,0,0,0.9) 52%, transparent 72%);
+  /* Subtle tonal shift so the photo feels part of the dark panel */
+  filter: brightness(0.95) contrast(1.05);
 }
 
 /* Floating info badges */
@@ -636,7 +656,8 @@ blockquote {
   .hamburger { display: flex; }
 
   /* Hero: stack */
-  .hero {
+  .hero::before { display: none; } /* not needed when stacked */
+  .hero-inner {
     flex-direction: column;
     min-height: auto;
   }
@@ -647,17 +668,17 @@ blockquote {
     padding: 100px 28px 56px;
   }
   .social-strip { display: none; } /* hide on mobile — links in contact section */
-  .hero-copy { margin-left: 0; max-width: 100%; }
+  .hero-copy { margin-left: 0; max-width: 100%; flex: none; }
 
   .hero-right {
     width: 100%;
     min-height: 340px;
     padding: 48px 28px;
+    justify-content: center; /* re-center avatar on mobile */
   }
 
-  .hero-visual { width: 220px; height: 220px; }
-  .av-wrap, .av-ring { width: 110px; height: 110px; }
-  .av-circle { width: 102px; height: 102px; font-size: 1.9rem; }
+  .hero-visual { width: 220px; height: 260px; }
+  .av-wrap { width: 180px; height: 220px; }
 
   .badge-1 { left: -20px; }
   .badge-2 { right: -30px; }
@@ -689,9 +710,8 @@ blockquote {
   .btn        { padding: 11px 22px; font-size: 0.82rem; }
 
   .hero-right { min-height: 300px; }
-  .hero-visual { width: 200px; height: 200px; }
-  .av-wrap, .av-ring { width: 100px; height: 100px; }
-  .av-circle { width: 92px; height: 92px; font-size: 1.7rem; }
+  .hero-visual { width: 180px; height: 220px; }
+  .av-wrap { width: 150px; height: 190px; }
 
   .badge { font-size: 0.75rem; padding: 8px 14px; }
   .badge-1 { left: 0;    top: 0;  }
