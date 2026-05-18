@@ -1,42 +1,216 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 	<head>
-		<title>Francia Web Resume</title>
+		<title>Wilhelm Gusztav Francia</title>
 		<link rel="icon" type="image/x-icon" href="assets/css/images/mygooselogocloser.jpg" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="theme-color" content="#0d1b2e" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/fontawesome-all.min.css" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-				
-				<!-- Header -->
-					<header id="header">
-						<h1>Wilhelm Gusztav Francia</h1>
-						<p>Technical Project Manager &nbsp;&bull;&nbsp; Goose &nbsp;&bull;&nbsp; Assess | Assemble | Act </p>
-						<nav>
-							<ul>
-								<li><a href="https://www.linkedin.com/in/wilhelm-gusztav-francia/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span>LinkedIn</a></li>
-								<li><a href="https://drive.google.com/file/d/1ARsbf-k-dttZx_2kzgIqEpKk8nyceGeL/view?usp=sharing" class="icon solid fa-newspaper"><span class="label">Resume</span>Resume</a></li>
-								<li><a href="https://github.com/meGusztav" class="icon brands fa-github"><span class="label">Github</span>Github</a></li>
-								<li><a href="tel:+639173089040" class="icon solid fa-phone"><span class="label">Call Me</span>Phone</a></li>
-								<li><a href="mailto: gusztavfrancia97@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span>Email</a></li>
-							</ul>
-						</nav>
-					</header>
+	<body>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Work of Wilhelm Gusztav Francia aka Goose</a>.</span>
-					</footer>
-
+		<!-- ======= NAVBAR ======= -->
+		<header class="navbar" id="navbar">
+			<div class="nav-inner">
+				<a href="#home" class="logo">Goose<span>.</span></a>
+				<ul class="nav-links">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#skills">Skills</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+				<button class="hamburger" id="hamburger" aria-label="Toggle menu">
+					<span></span><span></span><span></span>
+				</button>
 			</div>
+		</header>
+
+		<!-- Mobile full-screen nav -->
+		<div class="mob-nav" id="mob-nav">
+			<button class="mob-close" id="mob-close" aria-label="Close menu">&times;</button>
+			<ul>
+				<li><a href="#home"    class="mob-link">Home</a></li>
+				<li><a href="#about"   class="mob-link">About</a></li>
+				<li><a href="#skills"  class="mob-link">Skills</a></li>
+				<li><a href="#contact" class="mob-link">Contact</a></li>
+			</ul>
 		</div>
-		<script type="module" src = "script.js">
-		</script>
+
+		<main>
+
+			<!-- ======= HERO ======= -->
+			<section id="home" class="hero">
+
+				<!-- Left — light panel -->
+				<div class="hero-left">
+
+					<!-- Vertical social strip -->
+					<div class="social-strip">
+						<a href="https://www.linkedin.com/in/wilhelm-gusztav-francia/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+						<a href="https://github.com/meGusztav" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+						<a href="mailto:gusztavfrancia97@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+					</div>
+
+					<div class="hero-copy">
+						<span class="greeting">Hello, I'm</span>
+						<h1 class="hero-name">Wilhelm<br>Gusztav<br>Francia</h1>
+						<p class="hero-role">Technical Project Manager &bull; <em>Goose</em></p>
+						<p class="hero-tag">Assess &middot; Assemble &middot; Act</p>
+						<div class="hero-cta">
+							<a href="https://drive.google.com/file/d/1ARsbf-k-dttZx_2kzgIqEpKk8nyceGeL/view?usp=sharing"
+							   class="btn btn-solid" target="_blank" rel="noopener">View Resume</a>
+							<a href="#contact" class="btn btn-ring">Get In Touch</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Right — navy panel with avatar -->
+				<div class="hero-right">
+					<div class="hero-visual">
+
+						<div class="av-wrap">
+							<div class="av-ring">
+								<div class="av-circle"><span>WF</span></div>
+							</div>
+						</div>
+
+						<div class="badge badge-1">
+							<i class="fas fa-briefcase"></i>
+							<span>Technical PM</span>
+						</div>
+						<div class="badge badge-2">
+							<i class="fas fa-map-marker-alt"></i>
+							<span>Manila, PH</span>
+						</div>
+						<div class="badge badge-3">
+							<i class="fas fa-circle" style="color:#4ade80;font-size:.6em"></i>
+							<span>Open to Opportunities</span>
+						</div>
+
+					</div>
+
+					<!-- Background orbs inside right panel -->
+					<div class="orb orb-a"></div>
+					<div class="orb orb-b"></div>
+				</div>
+
+			</section>
+
+			<!-- ======= ABOUT + SKILLS ======= -->
+			<section id="about" class="about">
+				<div class="about-grid">
+
+					<!-- Quote / accent side -->
+					<div class="about-left">
+						<div class="about-deco">
+							<div class="deco-line"></div>
+							<blockquote>
+								&ldquo;Bridge the gap between people, process, and technology.&rdquo;
+							</blockquote>
+							<div class="deco-stats">
+								<div class="dstat">
+									<span class="dstat-num">PM</span>
+									<span class="dstat-lbl">Certified mindset</span>
+								</div>
+								<div class="dstat">
+									<span class="dstat-num">3&times;</span>
+									<span class="dstat-lbl">Faster delivery</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Text + Skills -->
+					<div class="about-right" id="skills">
+						<span class="section-tag">About Me</span>
+						<h2 class="section-title">Why Work<br>With Me?</h2>
+						<div class="accent-bar"></div>
+						<p class="about-body">
+							Known as <strong>Goose</strong>, I'm a Technical Project Manager who
+							thrives at the intersection of people, process, and technology.
+							I assess situations fast, assemble the right resources, and drive
+							projects to completion with precision and momentum.
+						</p>
+						<p class="about-body">
+							Whether coordinating cross-functional teams or navigating complex
+							technical requirements, I bring clarity and decisive action to
+							every engagement.
+						</p>
+
+						<h3 class="skills-heading">Expertise</h3>
+
+						<div class="skill">
+							<div class="skill-meta"><span>Project Management</span><span class="skill-pct">90%</span></div>
+							<div class="skill-track"><div class="skill-bar" data-w="90"></div></div>
+						</div>
+						<div class="skill">
+							<div class="skill-meta"><span>Stakeholder Communication</span><span class="skill-pct">85%</span></div>
+							<div class="skill-track"><div class="skill-bar" data-w="85"></div></div>
+						</div>
+						<div class="skill">
+							<div class="skill-meta"><span>Technical Coordination</span><span class="skill-pct">80%</span></div>
+							<div class="skill-track"><div class="skill-fill skill-bar" data-w="80"></div></div>
+						</div>
+						<div class="skill">
+							<div class="skill-meta"><span>Risk &amp; Timeline Management</span><span class="skill-pct">85%</span></div>
+							<div class="skill-track"><div class="skill-bar" data-w="85"></div></div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- ======= CONTACT ======= -->
+			<section id="contact" class="contact">
+				<div class="contact-inner">
+					<span class="section-tag light">Get In Touch</span>
+					<h2 class="section-title light">Let&rsquo;s Connect</h2>
+					<div class="accent-bar"></div>
+
+					<div class="contact-grid">
+						<a href="https://www.linkedin.com/in/wilhelm-gusztav-francia/"
+						   class="c-card" target="_blank" rel="noopener">
+							<i class="fab fa-linkedin"></i>
+							<span class="c-label">LinkedIn</span>
+							<span class="c-sub">Connect with me</span>
+						</a>
+						<a href="https://drive.google.com/file/d/1ARsbf-k-dttZx_2kzgIqEpKk8nyceGeL/view?usp=sharing"
+						   class="c-card" target="_blank" rel="noopener">
+							<i class="fas fa-file-alt"></i>
+							<span class="c-label">Resume</span>
+							<span class="c-sub">View my CV</span>
+						</a>
+						<a href="https://github.com/meGusztav" class="c-card" target="_blank" rel="noopener">
+							<i class="fab fa-github"></i>
+							<span class="c-label">GitHub</span>
+							<span class="c-sub">See my projects</span>
+						</a>
+						<a href="tel:+639173089040" class="c-card">
+							<i class="fas fa-phone"></i>
+							<span class="c-label">Call</span>
+							<span class="c-sub">+63 917 308 9040</span>
+						</a>
+						<a href="mailto:gusztavfrancia97@gmail.com" class="c-card">
+							<i class="fas fa-envelope"></i>
+							<span class="c-label">Email</span>
+							<span class="c-sub">gusztavfrancia97@gmail.com</span>
+						</a>
+					</div>
+				</div>
+			</section>
+
+		</main>
+
+		<footer class="site-footer">
+			<p>&copy; 2025 Wilhelm Gusztav Francia. All rights reserved.</p>
+		</footer>
+
+		<script src="script.js"></script>
 	</body>
 </html>
