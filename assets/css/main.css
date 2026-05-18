@@ -198,28 +198,11 @@ img { display: block; max-width: 100%; }
    HERO
    ============================================================ */
 .hero {
-  position: relative;
   overflow: hidden;
-  background: var(--navy); /* fills right-side margin beyond hero-inner */
-}
-
-/* Extends the light panel to the viewport left edge when hero-inner is constrained */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0 auto 0 0;
-  /* left margin + hero-left 48% share of 1200px inner */
-  width: calc((100% - 1200px) / 2 + 576px);
-  background: var(--bg-light);
-  z-index: 0;
-  pointer-events: none;
+  background: var(--bg-light); /* fills diagonal gap between panels */
 }
 
 .hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -362,8 +345,7 @@ img { display: block; max-width: 100%; }
   background: var(--navy);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: clamp(40px, 6%, 80px);
+  justify-content: center;
   position: relative;
   overflow: hidden;
   min-height: 100%;
@@ -389,28 +371,26 @@ img { display: block; max-width: 100%; }
 /* Hero visual container */
 .hero-visual {
   position: relative;
-  width: 280px; height: 280px;
+  width: 360px; height: 440px;
   display: flex; align-items: center; justify-content: center;
   z-index: 2;
   animation: slide-right 0.9s 0.35s var(--ease) both;
 }
 
 /* Avatar photo */
-.av-wrap { width: 260px; height: 300px; }
+.av-wrap { width: 340px; height: 420px; }
 .av-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
-  border-radius: 4px;
-  /* Fade all edges into the navy background */
-  -webkit-mask-image: radial-gradient(ellipse 78% 85% at 50% 42%,
-    black 35%, rgba(0,0,0,0.9) 52%, transparent 72%);
-  mask-image: radial-gradient(ellipse 78% 85% at 50% 42%,
-    black 35%, rgba(0,0,0,0.9) 52%, transparent 72%);
-  /* Subtle tonal shift so the photo feels part of the dark panel */
-  filter: brightness(0.95) contrast(1.05);
+  /* Fade sides and bottom into navy; keep face crisp at top-center */
+  -webkit-mask-image: radial-gradient(ellipse 72% 80% at 50% 38%,
+    black 42%, rgba(0,0,0,0.85) 58%, transparent 75%);
+  mask-image: radial-gradient(ellipse 72% 80% at 50% 38%,
+    black 42%, rgba(0,0,0,0.85) 58%, transparent 75%);
+  filter: brightness(0.92) contrast(1.08);
 }
 
 /* Floating info badges */
@@ -431,9 +411,9 @@ img { display: block; max-width: 100%; }
 }
 .badge i { color: var(--teal); }
 
-.badge-1 { top: 8px;   left: -60px;  animation: badge-a 4s ease-in-out infinite; animation-delay: 0.4s; }
-.badge-2 { top: 50%;   right: -70px; transform: translateY(-50%); animation: badge-b 5s ease-in-out infinite; animation-delay: 0.8s; }
-.badge-3 { bottom: 8px; left: -30px;  animation: badge-c 4.5s ease-in-out infinite; animation-delay: 0.2s; }
+.badge-1 { top: 24px;   left: -80px;  animation: badge-a 4s ease-in-out infinite; animation-delay: 0.4s; }
+.badge-2 { top: 44%;    right: -90px; transform: translateY(-50%); animation: badge-b 5s ease-in-out infinite; animation-delay: 0.8s; }
+.badge-3 { bottom: 32px; left: -50px; animation: badge-c 4.5s ease-in-out infinite; animation-delay: 0.2s; }
 
 /* ============================================================
    ABOUT / SKILLS
@@ -656,7 +636,6 @@ blockquote {
   .hamburger { display: flex; }
 
   /* Hero: stack */
-  .hero::before { display: none; } /* not needed when stacked */
   .hero-inner {
     flex-direction: column;
     min-height: auto;
@@ -677,8 +656,8 @@ blockquote {
     justify-content: center; /* re-center avatar on mobile */
   }
 
-  .hero-visual { width: 220px; height: 260px; }
-  .av-wrap { width: 180px; height: 220px; }
+  .hero-visual { width: 240px; height: 300px; }
+  .av-wrap { width: 220px; height: 280px; }
 
   .badge-1 { left: -20px; }
   .badge-2 { right: -30px; }
@@ -710,8 +689,8 @@ blockquote {
   .btn        { padding: 11px 22px; font-size: 0.82rem; }
 
   .hero-right { min-height: 300px; }
-  .hero-visual { width: 180px; height: 220px; }
-  .av-wrap { width: 150px; height: 190px; }
+  .hero-visual { width: 200px; height: 260px; }
+  .av-wrap { width: 180px; height: 240px; }
 
   .badge { font-size: 0.75rem; padding: 8px 14px; }
   .badge-1 { left: 0;    top: 0;  }
